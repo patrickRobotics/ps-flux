@@ -11,7 +11,35 @@ class CoursesPage extends React.Component {
   }
 
   render() {
-    return <h2>Courses</h2>;
+    return (
+      <>
+        <h2>Courses</h2>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Slug</th>
+              <th>Author ID</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.courses.map(course => {
+              return (
+                <tr>
+                  <td>{course.id}</td>
+                  <td>{course.title}</td>
+                  <td>{course.slug}</td>
+                  <td>{course.authorId}</td>
+                  <td>{course.category}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </>
+    );
   }
 }
 
